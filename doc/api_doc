@@ -1,0 +1,34 @@
+API je od programu oddelene ako nezavisla aplikacia na inom porte
+
+API: http://localhost:3000/api/
+Webstranka: http://localhost:2000/ 
+
+
+######################## API Doc ########################
+
+/api/v1.0/name=<name>
+SELECT * FROM persons WHERE person_name = ?
+
+/api/v1.0/namepart=<namepart>
+SELECT * FROM persons WHERE person_name LIKE '%' || ? || '%'
+
+/api/v1.0/descpart=<descpart>
+SELECT * FROM persons WHERE person_description LIKE '%' || ? || '%'
+
+/api/v1.0/nation=<nation>
+SELECT * FROM persons WHERE person_description LIKE ? || '%'
+
+/api/v1.0/day=<int:day>&month=<int:month>&year=<int:year>
+SELECT * FROM persons WHERE person_born_day = ? AND person_born_month = ? AND person_born_year = ?
+
+/api/v1.0/day=<int:day>&month=<int:month>
+SELECT * FROM persons WHERE person_born_day = ? AND person_born_month = ?
+
+/api/v1.0/day=<int:day>
+SELECT * FROM persons WHERE person_born_day = ?
+
+/api/v1.0/month=<int:month>
+SELECT * FROM persons WHERE person_born_month = ?
+
+/api/v1.0/year=<int:year>
+SELECT * FROM persons WHERE person_born_year = ?

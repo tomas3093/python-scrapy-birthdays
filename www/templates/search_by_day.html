@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Vyhladavac podla datumu</title>
+  </head>
+
+  <body>
+    <p><a href="/"><--</a></p>
+    <h1>Vyhladavac narodenin znamych osobnosti</h1>
+    <p><i>Podla dna</i></p>
+    <form action="/search/day" method="post">
+      <input type="number" name="day" min="1" max="31" placeholder="Zadajte den">
+      <input type="submit" value="Hladaj" name="submit_btn">
+    </form>
+
+    <table>
+      {% if rows is defined %}
+        {% for key, value in rows.items() %}
+
+          <tr>
+            <td> {{ value['person_born_day'] }}. </td>
+            <td> {{ value['person_born_month'] }}. </td>
+            <td> {{ value['person_born_year'] }} </td>
+            <td> </td>
+            <td><strong> {{ value['person_name'] }} </strong></td>
+            <td> </td>
+            <td> {{ value['person_description'] }} </td>
+          </tr>
+
+        {% endfor %}
+      {% endif %}
+    </table>
+
+      {% if messages is defined %}
+        {% for msg in messages %}
+
+          <p><strong> {{ msg }} </strong></p>
+
+        {% endfor %}
+      {% endif %}
+    </table>
+  </body>
+</html>

@@ -1,0 +1,14 @@
+# Vytvorenie tabulky
+conn.execute('CREATE TABLE persons (person_id INTEGER PRIMARY KEY AUTOINCREMENT, person_name VARCHAR(50) NOT NULL, person_description VARCHAR(150) NOT NULL, person_born_year INTEGER NOT NULL, person_born_month INTEGER NOT NULL, person_born_day INTEGER NOT NULL)')
+
+
+# Schema tabulky
+
+TABLE persons 
+
+person_id 		INTEGER 	PRIMARY KEY AUTOINCREMENT
+person_name 		VARCHAR(50) 	NOT NULL
+person_description 	VARCHAR(150) 	NOT NULL
+person_born_year 	INTEGER 	NOT NULL
+person_born_month 	INTEGER 	NOT NULL
+person_born_day 	INTEGER 	NOT NULL
