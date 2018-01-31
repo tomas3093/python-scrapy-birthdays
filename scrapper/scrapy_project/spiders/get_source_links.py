@@ -14,7 +14,7 @@ class GetSourceLinksSpider(scrapy.Spider):
 
     def parse(self, response):
 
-        #Vytvorenie vstupu (zoznamu vsetkych linkov) NEDOKONCENE!!
+        #Vytvorenie vstupu (zoznamu vsetkych linkov)
         source_links = []
         table = response.xpath('//table')
 
@@ -26,7 +26,7 @@ class GetSourceLinksSpider(scrapy.Spider):
 
 
         # Zapis linkov do suboru
-        filename = 'source_links.txt'
+        filename = 'source_links'
         with open(filename, 'a') as f:
             for line in source_links:
                 f.write('https://en.wikipedia.org' + line + '\n')

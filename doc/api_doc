@@ -1,7 +1,7 @@
 API je od programu oddelene ako nezavisla aplikacia na inom porte
 
 API: http://localhost:3000/api/
-Webstranka: http://localhost:2000/ 
+Aplikacia: http://localhost:2000/ 
 
 
 ######################## API Doc ########################

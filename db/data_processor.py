@@ -6,7 +6,7 @@ months_dict = { 'january':1, 'february':2, 'march':3, 'april':4, 'may':5, 'june'
 
 
 # Nacita vsetky zaznamy, riadok po riadku z pripraveneho suboru
-sources_filename = 'wiki_records.txt'
+sources_filename = 'raw_data'
 lines = []
 with open(sources_filename) as f:
     lines = f.readlines()

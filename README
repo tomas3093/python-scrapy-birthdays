@@ -1,0 +1,57 @@
+Projekt: 	Vyhľadávač narodenín známych osobností
+Autor: 		Tomáš Blázy
+Technológie:	python moduly Scrapy, Flask, SQLite
+
+
+Popis:
+
+1. Scrapy, spiders, získanie dát z webu
+	
+	- popis štruktúry skriptu 
+	- 'data_miner.py' - vytvorenie zoznamu linkov (subor source_links)
+	- 'data_miner.py' - spracovanie jednotlivých stránok a vytvorenie surových textových dát (raw_data)
+			  - 'scrapper_logs' - 367 GET requestov, trvanie približne 30 sekúnd
+
+
+2. Vytvorenie databázy
+	
+	- vytvorenie, štruktúra databázy SQLite
+	- 'data_processor.py' - spracovanie textových dát a vytvorenie záznamov v tabuľke 
+
+
+3. Flask, vytvorenie webovej aplikácie, API
+
+	API: http://localhost:3000/api/
+	Aplikacia: http://localhost:2000/ 
+
+
+	######################## API ########################
+
+	/api/v1.0/name=<name>
+	SELECT * FROM persons WHERE person_name = ?
+
+	/api/v1.0/namepart=<namepart>
+	SELECT * FROM persons WHERE person_name LIKE '%' || ? || '%'
+
+	/api/v1.0/descpart=<descpart>
+	SELECT * FROM persons WHERE person_description LIKE '%' || ? || '%'
+
+	/api/v1.0/nation=<nation>
+	SELECT * FROM persons WHERE person_description LIKE ? || '%'
+
+	/api/v1.0/day=<int:day>&month=<int:month>&year=<int:year>
+	SELECT * FROM persons WHERE person_born_day = ? AND person_born_month = ? AND person_born_year = ?
+
+	/api/v1.0/day=<int:day>&month=<int:month>
+	SELECT * FROM persons WHERE person_born_day = ? AND person_born_month = ?
+
+	/api/v1.0/day=<int:day>
+	SELECT * FROM persons WHERE person_born_day = ?
+
+	/api/v1.0/month=<int:month>
+	SELECT * FROM persons WHERE person_born_month = ?
+
+	/api/v1.0/year=<int:year>
+	SELECT * FROM persons WHERE person_born_year = ?
+
+
