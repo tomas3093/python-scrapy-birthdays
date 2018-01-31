@@ -1,0 +1,9 @@
+body { background-color: #333; font-family:Georgia, Times, serif; color:#eee;}
+
+ul { list-style:none; text-align:left; border-top:1px solid #eee; border-bottom:1px solid #eee; padding:10px 0; }
+
+ul li { display:block; text-transform:uppercase; padding:0 10px; letter-spacing:0.07em; }
+
+ul li a { text-decoration:none; color:#eee; }
+
+ul li a:hover { text-decoration:underline; }

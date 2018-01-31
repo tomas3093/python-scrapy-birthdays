@@ -31,7 +31,7 @@ def search_by_name():
 
     if request.method == 'POST':
         requested_name = re.sub('[^\w -%0-9]', '', request.form['name'])
-        api_uri = "http://localhost:3000/api/v1.0/name=" + requested_name
+        api_uri = "http://localhost:3000/api/v1.0/namepart=" + requested_name
 
         return request_api_and_render(api_uri, template)
     else:
@@ -134,4 +134,4 @@ def search_by_profession():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')

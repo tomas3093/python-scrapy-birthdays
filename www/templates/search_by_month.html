@@ -2,13 +2,15 @@
 
 <html>
   <head>
-    <title>Vyhladavac podla mesiaca</title>
+    <meta charset="utf-8">
+    <title>Vyhľadávač</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
   </head>
 
   <body>
     <p><a href="/"><--</a></p>
-    <h1>Vyhladavac narodenin znamych osobnosti</h1>
-    <p><i>Podla mesiaca</i></p>
+    <h1>Vyhľadávač narodenín známych osobností</h1>
+    <p><i>Podľa mesiaca</i></p>
     <form action="/search/month" method="post">
       <input type="number" name="month" min="1" max="12" placeholder="Zadajte mesiac">
       <input type="submit" value="Hladaj" name="submit_btn">

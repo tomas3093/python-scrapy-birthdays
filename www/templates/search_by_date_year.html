@@ -2,13 +2,15 @@
 
 <html>
   <head>
-    <title>Vyhladavac podla datumu a roku</title>
+    <meta charset="utf-8">
+    <title>Vyhľadávač</title>
+    <link rel="stylesheet" href="/static/style.css" type="text/css">
   </head>
 
   <body>
     <p><a href="/"><--</a></p>
-    <h1>Vyhladavac narodenin znamych osobnosti</h1>
-    <p><i>Podla datumu a roku</i></p>
+    <h1>Vyhľadávač narodenín známych osobností</h1>
+    <p><i>Podľa dátumu a roku</i></p>
     <form action="/search/date-year" method="post">
       <input type="date" name="date">
       <input type="submit" value="Hladaj" name="submit_btn">
